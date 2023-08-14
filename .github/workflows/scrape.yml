@@ -10,17 +10,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
-      - name: Installed package list
-        run: apt list --installed
-      - name: Remove Chrome
-        run: sudo apt purge google-chrome-stable
-      - name: Remove default Chromium
-        run: sudo apt purge chromium-browser
-      - name: Install a new Chromium
-        run: sudo apt install -y chromium-browser
+          python-version: '3.10'
+      # - name: Installed package list
+      #   run: apt list --installed
+      # - name: Remove Chrome
+      #   run: sudo apt purge google-chrome-stable
+      # - name: Remove default Chromium
+      #   run: sudo apt purge chromium-browser
+      # - name: Install a new Chromium
+      #   run: sudo apt install -y chromium-browser
       - name: Install all necessary packages
-        run: pip install requests beautifulsoup4 pandas webdriver-manager selenium chromedriver-autoinstaller pyvirtualdisplay
+        run: pip install webdriver-manager selenium chromedriver-autoinstaller pyvirtualdisplay
       - name: Run the scraping script
         run: python test.py
 
